@@ -7,6 +7,8 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
+
 const bodyParser = require('body-parser')
 
 
@@ -17,6 +19,7 @@ app.use(expressLayouts)
 app.use(express.static('public'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
 
